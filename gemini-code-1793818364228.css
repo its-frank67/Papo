@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: monospace, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+/* Left Column containing Game Box (top-left) and Download Button (bottom-left) */
+.left-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px;
+  gap: 24px;
+}
+
+/* Top-Left Square/Rectangular Game Screen */
+.game-box {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  height: 55%;
+  min-height: 320px;
+  border: 4px solid #000000;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+#game-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background-color: #ffffff;
+}
+
+.status-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  background: #ffffff;
+  z-index: 2;
+}
+
+.status-overlay.hidden {
+  display: none;
+}
+
+/* Bottom-Right Fullscreen Button inside Game Screen */
+.fullscreen-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 34px;
+  height: 34px;
+  border: 3px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Bottom-Left Download Button Box */
+.download-box {
+  width: 220px;
+  height: 36%;
+  min-height: 160px;
+  border: 4px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+}
+
+.download-box:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.download-box:not(:disabled):hover {
+  background-color: #f0f0f0;
+}
+
+.arrow-icon {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.download-label {
+  font-size: 12px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Very Right Game List Sidebar */
+.right-sidebar {
+  width: 260px;
+  height: 100%;
+  border-left: 4px solid #000000;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-item {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 3px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.game-item:hover {
+  background-color: #ececec;
+}
+
+.game-item.active {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.loading-item {
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 3px solid #000000;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline HTML Game Hub</title>
+  <!-- Automatically links to style.css in the same folder -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Left Area: Top-Left Game Screen + Bottom-Left Download Box -->
+    <div class="left-zone">
+      <div id="game-container" class="game-box">
+        <div id="status-overlay" class="status-overlay">
+          Select a game on the right to cache and play
+        </div>
+        <iframe
+          id="game-frame"
+          title="Game Screen"
+          sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-modals"
+        ></iframe>
+        <button id="fullscreen-btn" class="fullscreen-btn" title="Fullscreen" aria-label="Fullscreen">
+          &#x26F6;
+        </button>
+      </div>
+
+      <button id="download-btn" class="download-box" disabled title="Download current cached game">
+        <span class="arrow-icon">&darr;</span>
+        <span id="download-label" class="download-label">No Game Cached</span>
+      </button>
+    </div>
+
+    <!-- Right Sidebar: Game Names Separated by Horizontal Lines -->
+    <aside class="right-sidebar">
+      <div id="game-list" class="game-list">
+        <div class="loading-item">Loading repository games...</div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Automatically links to script.js in the same folder -->
+  <script src="./script.js" defer></script>
+</body>
+</html>
